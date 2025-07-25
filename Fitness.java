@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -22,11 +22,10 @@ public class Fitness {
                 break;
             case "2":
                 AddExercise();
-                break;
         }
     }
 
-    public static void ViewSchedule(String day) {
+    public static File ViewSchedule(String day) {
         switch (day) {
             default:
                 day = "Wednesday";
@@ -57,16 +56,57 @@ public class Fitness {
             while (scanner.hasNextLine()) {
                 System.out.println(scanner.nextLine());
             }
-        } catch (IOException e ) {
+            return file;
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
+    return new File("test.txt");
     }
 
     static void AddExercise() {
         System.out.println("Which day would you like to change? (1 - Monday, 2 - Tuesday, etc)");
         input = scanner.nextLine();
-        ViewSchedule(input);
-        System.out.println("\nWhich line would you like to change?")
+        File file = ViewSchedule(input);
+        System.out.println("\nWhich line would you like to change? (Type the next line number to add)");
+        int line = scanner.nextInt();
+        scanner.nextLine();
+        // Get user's exercise
+        String reps;
+        String sets;
+        String weight;
+        System.out.println("Which exercise?");
+        input = scanner.nextLine();
+        System.out.println("How many sets?");
+        sets = scanner.nextLine();
+        System.out.println("How many reps?");
+        reps = scanner.nextLine();
+        System.out.println("How much weight?");
+        weight = scanner.nextLine()
+        OverWriteLine(line, "- " + sets + " x " + reps + " x " + weight + " " + input, file);
+    }
+
+    static void OverWriteLine(int line, String message, File file) {
+        ArrayList<String> lines = new ArrayList<String>();
+        try {
+            Scanner meh = new Scanner(file);
+            while (meh.hasNextLine()) {
+                lines.add(meh.nextLine());
+            }
+            if (line - 1 == lines.size()) {
+                lines.add(message);
+            }
+            else if (line - 1 < lines.size()) {
+                lines.set(line - 1, message);
+            }
+            FileWriter writer = new FileWriter(file);
+            for (String i : lines) {
+                writer.write(i + "\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
