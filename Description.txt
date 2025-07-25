@@ -1,0 +1,31 @@
+A commandline based log tool. That can guide and remind users to figure out how many sets and reps they are to do each day.
+
+Basic functionality first:
+- For any given day, be able to spit back out what exercises are scheduled to be done.
+
+Example Usage:
+
+>>> Today
+Here is what is scheduled for you on [Today's date]
+
+----- [Today's date]'s Schedule -----
+- 3 x 100 lbs Bench Press
+- 3 x 15 lbs Seated Dumbbell Shoulder Press
+- 3 x 75 lbs Chest Flys
+
+
+- For each day of the week let the user schedule exercises
+
+Example Usage:
+
+>>> 
+
+
+
+Example Usage of program on boot:
+
+Welcome to the fitness tracker, what would you like to do? (1 - See today's schedule, 2 - Schedule An Exercise)
+>>> 1
+Which day would you like to see? (Type today of the week or 'Today' for today's schedule)
+>>> Today
+(See above for example)
