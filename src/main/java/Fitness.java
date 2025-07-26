@@ -1,11 +1,27 @@
 import java.util.*;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+/*
+import com.google.gson.Gson;
 
 
 
+public class AccountManager {
+    static Scannner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        System.out.println("Welcome to the fitness tracker, what would you like to do? (1 - Login, 2 - Register)");
+        String input = scanner.nextLine();
+        switch (input) {
+            case "1":
+                Login();
+                Fitness.Tracker();
+        }
+
+    }
+    //public static void Login();
+}
+*/
 
 public class Fitness {
     static Scanner scanner = new Scanner(System.in);
@@ -82,7 +98,7 @@ public class Fitness {
         System.out.println("How many reps?");
         reps = scanner.nextLine();
         System.out.println("How much weight?");
-        weight = scanner.nextLine()
+        weight = scanner.nextLine();
         OverWriteLine(line, "- " + sets + " x " + reps + " x " + weight + " " + input, file);
     }
 
