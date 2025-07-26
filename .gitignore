@@ -10,6 +10,9 @@
 # Ignore IntelliJ project files
 .idea/
 
+# Ignore compiled files
+target/
+
 # Ignore log files
 *.log
 

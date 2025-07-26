@@ -6,7 +6,6 @@ import java.io.IOException;
 import com.google.gson.Gson;
 
 
-
 public class AccountManager {
     static Scannner scanner = new Scanner(System.in);
     public static void main(String[] args) {
